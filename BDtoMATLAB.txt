@@ -1,1 +1,32 @@
+//matlab 大数据处理
 http://cn.mathworks.com/discovery/big-data-matlab.html
+
+//Matlab处理大规模数据的变量管理与硬盘存储
+http://blog.sina.com.cn/s/blog_4015d6ce0100pwih.html
+//内存使用效率
+http://cn.mathworks.com/help/matlab/matlab_prog/strategies-for-efficient-use-of-memory.html
+
+//Matlab大规模数据处理(官方教程)
+http://wenku.baidu.com/view/fef8a82b16fc700abb68fce9.html
+
+//matlab程序运行时间计算
+http://www.matlabsky.com/thread-2607-1-1.html
+
+在我看来，这一条尤其的重要，在处理大规模数据的时候
+
+6. 内存优化
+MATLAB在进行复杂的运算时需要占用大量的内存。合理使用内存和提高内存的使用效率，可以加快运行速度，减少系统资源的占用。
+
+7. 内存管理函数和命令
+●     Clear variablename：从内存中删除名称为variablename的变量。
+●     Clear all：从内存中删除所有的变量。
+●     Save：将指令的变量存入磁盘。
+●     Load：将save命令存入的变量载入内存。
+●     Quit：退出MATLAB，并释放所有分配的内存。
+●     Pack：把内存中的变量存入磁盘，再用内存中的连续空间载回这些变量。考虑到执行效率问题，不能在循环中使用。
+
+8. 节约内存的方法
+●     避免生成大的中间变量，并删除不再需要的临时变量。
+●     当使用大的矩阵变量时，预先指定维数并分配好内存，避免每次临时扩充维数。
+●     当程序需要生成大量变量数据时，可以考虑定期将变量写到磁盘，然后清除这些变量。当需要这些变量时，再重新从磁盘加载。
+●     当矩阵中数据极少时，将全矩阵转换为稀疏矩阵。
