@@ -1,3 +1,20 @@
-scatter3(C(:,1),C(:,2),C(:,3));
-cv=cov(C);%åæ–¹å·®
-[X,B]=eig(cv);%åæ–¹å·®çš„ç‰¹å¾å‘é‡å’Œç‰¹å¾å€¼
+function [ log ] = cov_eig( neighbor )
+% cov_eig ¸ù¾İĞ­·½²îÇóÌØÕ÷Öµ£¬Çó´óÌØÕ÷Öµ¸öÊı
+% neighbor ÁÚÓò¾ØÕó
+% log ´óµÄÌØÕ÷Öµ¸öÊı
+[n,m]=size(neighbor);
+if n<3
+    log=0;
+    return;
+end
+cv=cov(neighbor);%Ğ­·½²î
+[X,B]=eig(cv);%XÎªÌØÕ÷ÏòÁ¿£¬BÎªÌØÕ÷Öµ
+B=[B(1,1),B(2,2),B(3,3)];
+B=sort(B,'descend');
+a=[(sqrt(B(1))-sqrt(B(2)))/sqrt(B(1)),(sqrt(B(2))-sqrt(B(3)))/sqrt(B(1)),sqrt(B(3))/sqrt(B(1))];
+a=a>0.85;
+log=sum(a);
+%a=[B(1)/B(2),B(1)/B(3),B(2)/B(3)];
+%a=a>200;%´óÌØÕ÷ÖµÍ¨³£±ÈÆäËûµÄÌØÕ÷Öµ´ó1000±¶
+%log=3-sum(a);
+end
