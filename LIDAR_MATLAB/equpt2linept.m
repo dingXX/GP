@@ -1,10 +1,14 @@
-function [ linept ] = equpt2linept( equpt,k )
+function [ linept ] = equpt2linept( equpt )
 %equpt2linept 同一条直线方程点求同一条电力线点
 %equpt 直线方程点
 %linept 电力线点三维数组（每页为一条电力线）
-%以 以某轴排序后的邻近点为邻近点
-if(~k)%直线方程k不存在，则按x轴排序
-    k=2;%对y轴操作
+%k 以某轴排序后的邻近点为邻近点
+detax=max(equpt(:,1))-min(equpt(:,1));
+detay=max(equpt(:,2))-min(equpt(:,2));
+if(detax>=detay)
+    k=1;
+else
+    k=2;
 end
 j=1;%电力线个数
 equpt=sortrows(equpt,k);
@@ -39,4 +43,5 @@ while length(equpt)>10
         end
         j=j+1;
     end
+end
 end

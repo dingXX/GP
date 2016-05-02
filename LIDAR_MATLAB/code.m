@@ -28,6 +28,10 @@ range=[min(linedata(:,1)),max(linedata(:,1));min(linedata(:,2)),max(linedata(:,2
 scatter(linedata(:,1),linedata(:,2),3,[0,0,0],'.');
 
 
-x=lines(1).point1(1):1:lines(1).point2(1);
-y=lines(1).a*x+lines(1).b;
+x=linearEqu(1).point1(1):1:linearEqu(1).point2(1);
+if linearEqu.b==0
+    y=x*0+linearEqu(1).point1(2);
+else
+    y=-(linearEqu(1).a*x+linearEqu(1).c)/linearEqu(1).b;
+end
 plot(x,y)
