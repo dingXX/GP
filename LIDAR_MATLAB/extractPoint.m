@@ -1,5 +1,5 @@
 function [ linedata ] = extractPoint( data,r )
-%extractPoint 提取电力线点
+%extractPoint 分割电力线点
 %data 原始点云数据
 %r 椭球邻域半径数组
 [n,m]=size(data);

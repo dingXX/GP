@@ -14,7 +14,5 @@ B=sort(B,'descend');
 a=[(sqrt(B(1))-sqrt(B(2)))/sqrt(B(1)),(sqrt(B(2))-sqrt(B(3)))/sqrt(B(1)),sqrt(B(3))/sqrt(B(1))];
 a=a>0.85;
 log=sum(a);
-%a=[B(1)/B(2),B(1)/B(3),B(2)/B(3)];
-%a=a>200;%大特征值通常比其他的特征值大1000倍
-%log=3-sum(a);
+
 end

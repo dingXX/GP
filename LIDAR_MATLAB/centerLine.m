@@ -1,4 +1,4 @@
-function [ line ,num] = centerLine( data )
+function [ line] = centerLine( data )
 %centerLine 找到电力线点在XOY平面上的中心线（经过的点最多）
 %data 电力线点
 %line 中心线参数
