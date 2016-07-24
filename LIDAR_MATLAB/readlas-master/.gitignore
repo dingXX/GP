@@ -1,0 +1,9 @@
+# Mac Stuff
+.DS_Store
+
+# Working files
+*.m~
+
+# Test files
+*.las
+test.m
