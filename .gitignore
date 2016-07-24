@@ -1,9 +1,7 @@
-*.tmp
+﻿*.tmp
 毕业论文
 LIDAR_MATLAB/data
 *.doc
-*.png
 *.docx
-*.jpg
 *.pdf
 *.fig
